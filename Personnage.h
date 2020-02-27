@@ -1,30 +1,19 @@
 #ifndef DEF_PERSONNAGE
 #define DEF_PERSONNAGE
-
+ 
+#include <iostream>
 #include <string>
-
-#include "Arme.h"
-
+ 
 class Personnage
 {
     public:
-
-    Personnage();
-    Personnage(std::string nomArme, int degatArme);
-    void recevoirDegats(int nbDegats);
-    void attaquer(Personnage &cible);
-    void boirePotionDeVie(int quantitePotion);
-    void changerArme(std::string nomNouvelleArme, int degatsNouvelleArme);
-    bool estVivant() const;
-    void afficherEtat() const;
-    ~Personnage();
-
+        Personnage(string nom);
+        void recevoirDegats(int degats);
+        void coupDePoing(Personnage &cible) const;
+ 
     private:
-
-    std::string m_nom;
-    int m_vie;
-    int m_mana;
-    Arme *m_arme;
+        int m_vie;
+        std::string m_nom;
 };
-
+ 
 #endif
